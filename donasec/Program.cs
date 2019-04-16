@@ -46,6 +46,13 @@ namespace donasec
                     mainForm.comboBoxBrowsers.ValueMember = "Value";
                     mainForm.comboBoxBrowsers.DisplayMember = "Key";
 
+                    // Select user preference for browser
+                    string default_browser = Properties.Settings.Default["DefaultBrowser"].ToString();
+                    if (default_browser != "")
+                    {
+                        mainForm.comboBoxBrowsers.Text = default_browser;
+                    }
+
                     // Select Abord button by default
                     mainForm.buttonAbort.Select();
 

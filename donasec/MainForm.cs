@@ -21,6 +21,12 @@ namespace donasec
             string uri = textBoxLink.Text;
             string browser_path = comboBoxBrowsers.SelectedValue.ToString();
 
+            if (Properties.Settings.Default["DefaultBrowser"].ToString() != comboBoxBrowsers.Text)
+            {
+                Properties.Settings.Default["DefaultBrowser"] = comboBoxBrowsers.Text;
+                Properties.Settings.Default.Save();
+            }
+
             ProcessStartInfo launcher = new ProcessStartInfo()
             {
                 FileName = browser_path,
