@@ -127,6 +127,9 @@ namespace donasec
                 }
             }
 
+            // Add MS-EDGE manually
+            browsers.Add(new KeyValuePair<string, string>("Open with MS-Edge", ""));
+
             return browsers;
         }
     }
