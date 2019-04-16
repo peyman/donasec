@@ -187,15 +187,15 @@
 
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.ComboBox comboBoxBrowsers;
         private System.Windows.Forms.Button buttonProceed;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Button buttonAbort;
-        private System.Windows.Forms.TextBox textBoxLink;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TextBox textBox1;
+        public System.Windows.Forms.TextBox textBoxLink;
+        public System.Windows.Forms.ComboBox comboBoxBrowsers;
     }
 }
 

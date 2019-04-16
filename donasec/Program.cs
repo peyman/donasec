@@ -13,7 +13,7 @@ namespace donasec
             {
                 if (Helper.IsCurrentUserElevated())     // Admin privileges, proceed with Install
                 {
-                    ;
+                    Helper.RegisterApplication();
                 }
                 else    // Not admin, raise privileges
                 {
@@ -31,7 +31,9 @@ namespace donasec
             {
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
-                Application.Run(new MainForm());
+                Form mainForm = new MainForm();
+                //TODO
+                Application.Run(mainForm);
             }
         }
     }
