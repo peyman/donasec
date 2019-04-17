@@ -36,6 +36,19 @@ namespace donasec
                     );
                 }
             }
+            else if (args[0] == "uninstall") // Uninstall mode, assumes elevated privilege
+            {
+                // Remove the registry keys
+                Helper.DeregisterApplication();
+
+                // Say godbye.
+                ProcessStartInfo launcher = new ProcessStartInfo()
+                {
+                    FileName = "http://www.donasec.com/thank-you-uninstall",
+                    UseShellExecute = true
+                };
+                Process.Start(launcher);
+            }
             else   // Run mode - proceed if args[0] is a URI and discard the other args
             {
                 string uri = args[0];

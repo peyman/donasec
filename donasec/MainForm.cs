@@ -47,5 +47,20 @@ namespace donasec
             // Finish
             Close();
         }
+
+        private void buttonUninstall_Click(object sender, EventArgs e)
+        {
+            // Need admin privileges
+            Process.Start(
+                new ProcessStartInfo()
+                {
+                    FileName = System.Reflection.Assembly.GetExecutingAssembly().Location,
+                    UseShellExecute = true,
+                    Verb = "runas",
+                    Arguments = "uninstall"
+                }
+            );
+            Close();
+        }
     }
 }

@@ -84,6 +84,30 @@ namespace donasec
             registeredapps_key.Close();
         }
 
+        public static void DeregisterApplication()
+        {
+            // CLASSES_ROOT
+            RegistryKey uriclass_key = Registry.ClassesRoot.OpenSubKey("Donasec");
+            if (uriclass_key!= null)
+            {
+                Registry.ClassesRoot.DeleteSubKeyTree("Donasec", false);
+            }
+            uriclass_key.Close();
+
+            // LOCAL_MACHINE\SOFTWARE\CLIENTS
+            RegistryKey software_key = Registry.LocalMachine.OpenSubKey(@"SOFTWARE\Clients\Donasec");
+            if (software_key != null)
+            {
+                Registry.LocalMachine.DeleteSubKeyTree(@"SOFTWARE\Clients\Donasec", false);
+            }
+            software_key.Close();
+
+            // LOCAL_MACHINE\SOFTWARE\REGISTEREDAPPLICATIONS
+            RegistryKey registeredapps_key = Registry.LocalMachine.OpenSubKey(@"SOFTWARE\RegisteredApplications", true);
+            registeredapps_key.DeleteValue("Donasec", false);
+            registeredapps_key.Close();
+        }
+
         public static bool IsUri(string uristring)
         {
             try
