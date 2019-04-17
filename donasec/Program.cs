@@ -13,7 +13,16 @@ namespace donasec
             {
                 if (Helper.IsCurrentUserElevated())     // Admin privileges, proceed with Install
                 {
+                    // Add the registry keys required
                     Helper.RegisterApplication();
+
+                    // Trigger the first link to bring up the Win 10 default application pop-up
+                    ProcessStartInfo launcher = new ProcessStartInfo()
+                    {
+                        FileName = "http://www.donasec.com/thank-you",
+                        UseShellExecute = true
+                    };
+                    Process.Start(launcher);
                 }
                 else    // Not admin, raise privileges
                 {
