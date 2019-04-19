@@ -1,5 +1,4 @@
 # donasec
-'d on a sec, am I being phished?
-donasec is a very simple tool that gives the user a second chance to break the line when they are being phished
+donasec is a very simple tool that acts as the default browser, offering the user the choice to follow a link or abort it.
 
 More details on www.donasec.com
