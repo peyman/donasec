@@ -42,14 +42,10 @@
             this.buttonProceed = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.buttonUninstall = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            this.groupBox5.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox2
@@ -58,7 +54,7 @@
             this.groupBox2.Controls.Add(this.textBoxHelp);
             this.groupBox2.Location = new System.Drawing.Point(574, 12);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(214, 109);
+            this.groupBox2.Size = new System.Drawing.Size(214, 171);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Tell me more...";
@@ -145,7 +141,7 @@
             this.groupBox4.Size = new System.Drawing.Size(231, 80);
             this.groupBox4.TabIndex = 7;
             this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "YOLO";
+            this.groupBox4.Text = "You really want to open this link";
             // 
             // comboBoxBrowsers
             // 
@@ -191,43 +187,12 @@
             this.label1.Text = "You have clicked on a web link (email, etc.). This will open up a web browser. Is" +
     " it what you want?";
             // 
-            // groupBox5
-            // 
-            this.groupBox5.Controls.Add(this.label4);
-            this.groupBox5.Controls.Add(this.buttonUninstall);
-            this.groupBox5.Location = new System.Drawing.Point(574, 132);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(214, 51);
-            this.groupBox5.TabIndex = 2;
-            this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "Thanks, but no thanks...";
-            // 
-            // buttonUninstall
-            // 
-            this.buttonUninstall.Location = new System.Drawing.Point(125, 22);
-            this.buttonUninstall.Name = "buttonUninstall";
-            this.buttonUninstall.Size = new System.Drawing.Size(83, 23);
-            this.buttonUninstall.TabIndex = 0;
-            this.buttonUninstall.Text = "Uninstall";
-            this.buttonUninstall.UseVisualStyleBackColor = true;
-            this.buttonUninstall.Click += new System.EventHandler(this.buttonUninstall_Click);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(9, 26);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(110, 13);
-            this.label4.TabIndex = 1;
-            this.label4.Text = "Click here to uninstall:";
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 188);
             this.ControlBox = false;
-            this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
@@ -242,8 +207,6 @@
             this.groupBox4.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.groupBox5.ResumeLayout(false);
-            this.groupBox5.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -262,9 +225,6 @@
         private System.Windows.Forms.Button buttonProceed;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button buttonUninstall;
     }
 }
 

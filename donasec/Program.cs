@@ -9,48 +9,8 @@ namespace donasec
         [STAThread]
         static void Main(string[] args)
         {
-            if (args.Length == 0)   // Setup mode
-            {
-                if (Helper.IsCurrentUserElevated())     // Admin privileges, proceed with Install
-                {
-                    // Add the registry keys required
-                    Helper.RegisterApplication();
-
-                    // Trigger the first link to bring up the Win 10 default application pop-up
-                    ProcessStartInfo launcher = new ProcessStartInfo()
-                    {
-                        FileName = "http://www.donasec.com/thank-you",
-                        UseShellExecute = true
-                    };
-                    Process.Start(launcher);
-                }
-                else    // Not admin, raise privileges
-                {
-                    Process.Start(
-                        new ProcessStartInfo()
-                        {
-                            FileName = System.Reflection.Assembly.GetExecutingAssembly().Location,
-                            UseShellExecute = true,
-                            Verb = "runas"
-                        }
-                    );
-                }
-            }
-            else if (args[0] == "uninstall") // Uninstall mode, assumes elevated privilege
-            {
-                // Remove the registry keys
-                Helper.DeregisterApplication();
-
-                // Say godbye.
-                ProcessStartInfo launcher = new ProcessStartInfo()
-                {
-                    FileName = "http://www.donasec.com/thank-you-uninstall",
-                    UseShellExecute = true
-                };
-                Process.Start(launcher);
-            }
-            else   // Run mode - proceed if args[0] is a URI and discard the other args
-            {
+            if (args.Length != 0)
+            { 
                 string uri = args[0];
                 if (Helper.IsUri(uri) && Helper.IsHttpUri(uri))  // Make sure we have an URI to pass to a browser
                 {
