@@ -40,11 +40,11 @@ Section "Installer"
   File ..\bin\Release\donasec.exe
 
   ; Add configuration to the registry
-  WriteRegStr HKCR ${PRODUCT} "" "URL: Donasec."
+  WriteRegStr HKCR ${PRODUCT} "" "URL: Donasec, the web gatekeeper."
   WriteRegStr HKCR ${PRODUCT} "URL Protocol" ""
   WriteRegStr HKCR ${PRODUCT}\DefaultIcon "" "$INSTDIR\donasec.exe,0"
   WriteRegStr HKCR ${PRODUCT}\shell\open\command "" "$INSTDIR\donasec.exe $\"%1$\""
-  WriteRegStr HKLM SOFTWARE\Clients\${PRODUCT}\Capabilities "ApplicationDescription" "Donasec."
+  WriteRegStr HKLM SOFTWARE\Clients\${PRODUCT}\Capabilities "ApplicationDescription" "Donasec: The web gatekeeper."
   WriteRegStr HKLM SOFTWARE\Clients\${PRODUCT}\Capabilities "ApplicationName" "Donasec"
   WriteRegStr HKLM SOFTWARE\Clients\${PRODUCT}\Capabilities\UrlAssociations "http" "Donasec"
   WriteRegStr HKLM SOFTWARE\Clients\${PRODUCT}\Capabilities\UrlAssociations "https" "Donasec"
