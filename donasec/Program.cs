@@ -19,7 +19,7 @@ namespace donasec
                     MainForm mainForm = new MainForm();
 
                     // Show the URI to the user
-                    mainForm.textBoxLink.Text = uri;
+                    mainForm.textBoxLink.Text = (new Uri(uri)).IdnHost;
                     mainForm.textBoxLink.SelectionStart = 0;
 
                     // Provide the list of installed browsers
