@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace donasec
@@ -19,9 +20,20 @@ namespace donasec
                     MainForm mainForm = new MainForm();
 
                     // Show the URI to the user
-                    mainForm.textBoxLink.Text = (new Uri(uri)).IdnHost;
+                    mainForm.textBoxLink.Text = uri.ToLower();
                     mainForm.textBoxLink.SelectionStart = 0;
 
+                    // Is the URI an IDN? Let the user know
+                    string uriIdnHost = (new Uri(uri)).IdnHost.ToLower();
+                    string uriHost = (new Uri(uri)).Host.ToLower();
+                    if (! uriIdnHost.Equals(uriHost))
+                    {
+                        mainForm.labelNote.Visible = true;
+                        mainForm.labelNote.Text = "Warning: international domain name - domain is actually: " + uriIdnHost.ToLower();
+                        mainForm.labelNote.SelectionStart = 0;
+                        mainForm.labelNote.BackColor = mainForm.labelNote.BackColor;
+                    }
+                    
                     // Provide the list of installed browsers
                     var browsers = Helper.ListOfInstalledBrowsers();
                     mainForm.comboBoxBrowsers.DataSource = browsers;
