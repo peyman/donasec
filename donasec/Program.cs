@@ -55,6 +55,16 @@ namespace donasec
                     }
                     catch { }
 
+                    // Is this a sponsored link?
+                    string sponsor = Helper.getSponsor(uriHost);
+                    if (sponsor != "")
+                    {
+                        mainForm.labelNoteSponsor.Visible = true;
+                        mainForm.labelNoteSponsor.Text = "This site has been approved to be owned by: -" + sponsor + "-";
+                        mainForm.labelNoteSponsor.SelectionStart = 0;
+                        mainForm.labelNoteSponsor.BackColor = mainForm.labelNote.BackColor;
+                    }
+
                     // Provide the list of installed browsers
                     var browsers = Helper.ListOfInstalledBrowsers();
                     mainForm.comboBoxBrowsers.DataSource = browsers;

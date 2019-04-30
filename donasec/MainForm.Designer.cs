@@ -44,6 +44,7 @@
             this.labelNote = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.labelNoteBis = new System.Windows.Forms.TextBox();
+            this.labelNoteSponsor = new System.Windows.Forms.TextBox();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -167,6 +168,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.labelNoteSponsor);
             this.groupBox1.Controls.Add(this.labelNoteBis);
             this.groupBox1.Controls.Add(this.labelNote);
             this.groupBox1.Controls.Add(this.groupBox4);
@@ -216,6 +218,18 @@
             this.labelNoteBis.Visible = false;
             this.labelNoteBis.WordWrap = false;
             // 
+            // labelNoteSponsor
+            // 
+            this.labelNoteSponsor.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.labelNoteSponsor.ForeColor = System.Drawing.Color.Blue;
+            this.labelNoteSponsor.Location = new System.Drawing.Point(12, 99);
+            this.labelNoteSponsor.Name = "labelNoteSponsor";
+            this.labelNoteSponsor.ReadOnly = true;
+            this.labelNoteSponsor.Size = new System.Drawing.Size(532, 13);
+            this.labelNoteSponsor.TabIndex = 10;
+            this.labelNoteSponsor.Visible = false;
+            this.labelNoteSponsor.WordWrap = false;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -255,6 +269,7 @@
         private System.Windows.Forms.Label label1;
         public System.Windows.Forms.TextBox labelNote;
         public System.Windows.Forms.TextBox labelNoteBis;
+        public System.Windows.Forms.TextBox labelNoteSponsor;
     }
 }
 

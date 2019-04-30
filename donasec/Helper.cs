@@ -2,11 +2,33 @@
 using Microsoft.Win32;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Linq;
 
 namespace donasec
 {
     static class Helper
     {
+        // TODO: improved DB - just POC for now
+        private static List<KeyValuePair<string, string>> sponsors =
+            new List<KeyValuePair<string, string>>()
+            {
+                new KeyValuePair<string, string>("Donasec","donasec.com"),
+                new KeyValuePair<string, string>("Donasec","www.donasec.com"),
+                new KeyValuePair<string, string>("Paypal","www.paypal.com"),
+                new KeyValuePair<string, string>("Paypal","paypal.com")
+            };
+
+        public static string getSponsor(string uri)
+        {
+            string result = "";
+            KeyValuePair<string, string> sponsor = sponsors.SingleOrDefault(x => x.Value == uri);
+            if (! String.IsNullOrEmpty(sponsor.Key))
+            {
+                result = sponsor.Key;
+            }
+            return result;
+        }
+
         public static bool IsUri(string uristring)
         {
             try
