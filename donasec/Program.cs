@@ -21,7 +21,7 @@ namespace donasec
                     MainForm mainForm = new MainForm();
 
                     // Show the URI to the user
-                    mainForm.textBoxLink.Text = uri.ToLower();
+                    mainForm.textBoxLink.Text = uri;
                     mainForm.textBoxLink.SelectionStart = 0;
 
                     // Is the URI an IDN? Let the user know
