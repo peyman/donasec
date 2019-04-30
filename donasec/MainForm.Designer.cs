@@ -41,8 +41,9 @@
             this.comboBoxBrowsers = new System.Windows.Forms.ComboBox();
             this.buttonProceed = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.labelNote = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.labelNoteBis = new System.Windows.Forms.TextBox();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -55,7 +56,7 @@
             this.groupBox2.Controls.Add(this.textBoxHelp);
             this.groupBox2.Location = new System.Drawing.Point(574, 12);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(214, 171);
+            this.groupBox2.Size = new System.Drawing.Size(214, 210);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Tell me more...";
@@ -108,7 +109,7 @@
             // 
             this.groupBox3.Controls.Add(this.label3);
             this.groupBox3.Controls.Add(this.buttonAbort);
-            this.groupBox3.Location = new System.Drawing.Point(42, 87);
+            this.groupBox3.Location = new System.Drawing.Point(42, 124);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(249, 80);
             this.groupBox3.TabIndex = 6;
@@ -138,7 +139,7 @@
             // 
             this.groupBox4.Controls.Add(this.comboBoxBrowsers);
             this.groupBox4.Controls.Add(this.buttonProceed);
-            this.groupBox4.Location = new System.Drawing.Point(310, 87);
+            this.groupBox4.Location = new System.Drawing.Point(310, 124);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(231, 80);
             this.groupBox4.TabIndex = 7;
@@ -166,6 +167,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.labelNoteBis);
             this.groupBox1.Controls.Add(this.labelNote);
             this.groupBox1.Controls.Add(this.groupBox4);
             this.groupBox1.Controls.Add(this.groupBox3);
@@ -174,21 +176,10 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(556, 171);
+            this.groupBox1.Size = new System.Drawing.Size(556, 210);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "\'d on a sec! Not so fast...";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(6, 22);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(470, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "You have clicked on a web link (email, etc.). This will open up a web browser. Is" +
-    " it what you want?";
             // 
             // labelNote
             // 
@@ -202,11 +193,34 @@
             this.labelNote.Visible = false;
             this.labelNote.WordWrap = false;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(6, 22);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(470, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "You have clicked on a web link (email, etc.). This will open up a web browser. Is" +
+    " it what you want?";
+            // 
+            // labelNoteBis
+            // 
+            this.labelNoteBis.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.labelNoteBis.ForeColor = System.Drawing.Color.Red;
+            this.labelNoteBis.Location = new System.Drawing.Point(12, 80);
+            this.labelNoteBis.Name = "labelNoteBis";
+            this.labelNoteBis.ReadOnly = true;
+            this.labelNoteBis.Size = new System.Drawing.Size(532, 13);
+            this.labelNoteBis.TabIndex = 9;
+            this.labelNoteBis.Visible = false;
+            this.labelNoteBis.WordWrap = false;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 188);
+            this.ClientSize = new System.Drawing.Size(800, 234);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
@@ -240,6 +254,7 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label1;
         public System.Windows.Forms.TextBox labelNote;
+        public System.Windows.Forms.TextBox labelNoteBis;
     }
 }
 

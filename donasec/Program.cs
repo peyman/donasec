@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
 using System.Drawing;
+using System.Net;
 using System.Windows.Forms;
 
 namespace donasec
@@ -33,7 +34,27 @@ namespace donasec
                         mainForm.labelNote.SelectionStart = 0;
                         mainForm.labelNote.BackColor = mainForm.labelNote.BackColor;
                     }
-                    
+
+                    // Is it a redirecting URI, such as shortened URL?
+                    try
+                    {
+                        HttpWebRequest req = (HttpWebRequest)WebRequest.Create(uri);
+                        req.AllowAutoRedirect = false;
+                        HttpWebResponse resp = (HttpWebResponse)req.GetResponse();
+                        if (((int)resp.StatusCode) <= 399 && ((int)resp.StatusCode) > 300) // 3xx
+                        {
+                            string redirectedURL = resp.Headers["Location"];
+                            if ((redirectedURL.ToLower().StartsWith("http://")) && (!uri.ToLower().Equals(redirectedURL.ToLower())))
+                            {
+                                mainForm.labelNoteBis.Visible = true;
+                                mainForm.labelNoteBis.Text = "Warning: redirecting URL - next hop is: " + redirectedURL;
+                                mainForm.labelNoteBis.SelectionStart = 0;
+                                mainForm.labelNoteBis.BackColor = mainForm.labelNote.BackColor;
+                            }
+                        }
+                    }
+                    catch { }
+
                     // Provide the list of installed browsers
                     var browsers = Helper.ListOfInstalledBrowsers();
                     mainForm.comboBoxBrowsers.DataSource = browsers;
